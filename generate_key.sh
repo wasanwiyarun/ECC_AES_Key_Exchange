@@ -18,14 +18,14 @@ openssl ec -in deviceB_public_key.pem -pubin -outform der -out deviceB_public_ke
 
 # exgtract key to raw file.
 cd ../pythonScript/
-python3 extract_private_key_to_raw.py ../ecc_key/deviceA_private_key.der
-python3 extract_private_key_to_raw.py ../ecc_key/deviceB_private_key.der
-python3 extract_public_key_to_raw.py ../ecc_key/deviceA_public_key.der
-python3 extract_public_key_to_raw.py ../ecc_key/deviceB_public_key.der
+# python3 extract_private_key_to_raw.py ../ecc_key/deviceA_private_key.der
+# python3 extract_private_key_to_raw.py ../ecc_key/deviceB_private_key.der
+# python3 extract_public_key_to_raw.py ../ecc_key/deviceA_public_key.der
+# python3 extract_public_key_to_raw.py ../ecc_key/deviceB_public_key.der
 
 # convert der to c header file as consnt uint8_t*
-python3 convertfile_c_header.py deviceA_key ../ecc_key/deviceA_private_key_raw.bin ../ecc_key/deviceA_public_key_raw.bin
-python3 convertfile_c_header.py deviceB_key ../ecc_key/deviceB_private_key_raw.bin ../ecc_key/deviceB_public_key_raw.bin
+python3 convertfile_c_header.py deviceA_key ../ecc_key/deviceA_private_key.der ../ecc_key/deviceA_public_key.der
+python3 convertfile_c_header.py deviceB_key ../ecc_key/deviceB_private_key.der ../ecc_key/deviceB_public_key.der
 
 
 
